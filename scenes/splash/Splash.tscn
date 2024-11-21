@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwbabt0onmefn"]
+
+[ext_resource type="Texture2D" uid="uid://60xkiathjpb1" path="res://scenes/splash/images/MadeWithGodot.png" id="1_7ih80"]
+[ext_resource type="Script" path="res://scenes/splash/SplashScript.gd" id="1_mpd7k"]
+[ext_resource type="PackedScene" uid="uid://df0gmpto6tbxm" path="res://scenes/mainmenu/mainmenu.tscn" id="2_n2fjf"]
+[ext_resource type="Theme" uid="uid://cj173eu8isrkk" path="res://scenes/splash/themes/splashtheme.tres" id="4_awc7n"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("splash_screen_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mpd7k")
+main_menu = ExtResource("2_n2fjf")
+splash_screen_container = NodePath("CenterContainer")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2560.0
+offset_bottom = 1440.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.333, 0.333)
+
+[node name="MadeWith" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_7ih80")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="CenterContainer/MadeWith"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_awc7n")
+text = "Press Any Key to Skip..."
